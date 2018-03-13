@@ -12,27 +12,30 @@ public class Solution {
     static String[] friendlyWords(String[] input) {
         List<String> list = new ArrayList(Arrays.asList(input));
     	SortedSet<String> group = new TreeSet();
-    	String string1 = null, string2 = null, finalResult = "";
+    	String string2 = "", finalResult = "";
     	
-		string1 = list.get(0);
+		String string1 = list.get(0);
     	
     	for (int j = 1; j < list.size(); j++) {
     		string2 = list.get(j);
 
     		if (isValid(string1, string2) && isFriendly(string1, string2)) {
-    			group.add(string1);
                 group.add(string2);
     		}
     	}
 
         list.remove(string1);
 
-        for (String string: group) {
-            list.remove(string);
-            finalResult += string + " ";
-        }
+        if (group.size() > 0) {
+            list.removeAll(group);
 
-        result.add(finalResult);
+            finalResult += string1 + " ";
+            for (String string: group) {
+                finalResult += string + " ";
+            }
+
+            result.add(finalResult);            
+        }
 
         if (list.size() > 1) { 
             friendlyWords(list.toArray(new String[list.size()]));
@@ -76,9 +79,6 @@ public class Solution {
         return (c == 0 || c == ' '); 
     }
 
-    /**
-     * DO NOT MODIFY THIS METHOD!
-     */
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
         
