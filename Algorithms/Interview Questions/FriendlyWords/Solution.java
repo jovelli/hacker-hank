@@ -1,15 +1,31 @@
-import java.io.*;
+// Author: Romulo Jovelli
+// Interview Question: find anagrams, group and show them both sorted by group and strings. If string doesn't match any other, don't show it.
+
+// sample input 
+// 10                        
+// casa
+// fdsa
+// saca
+// test
+// este
+// ttse
+// amor
+// stes
+// roma
+// omar
+
+// sample output
+// amor omar roma 
+// casa saca 
+// test ttse
+
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-import java.time.*;
 
 public class Solution {
 
     private static SortedSet<String> result = new TreeSet();
 
-    static String[] friendlyWords(String[] input) {
+    private static String[] friendlyWords(String[] input) {
         List<String> list = new ArrayList(Arrays.asList(input));
     	SortedSet<String> group = new TreeSet();
     	String string2 = "", finalResult = "";
@@ -44,7 +60,7 @@ public class Solution {
         return result.toArray(new String[result.size()]);
     }
 
-    static boolean isFriendly(String a, String b) {
+    private static boolean isFriendly(String a, String b) {
         char temp = 0, first = 0, second = 0;
 
         char[] array1 = a.toCharArray();
@@ -57,7 +73,7 @@ public class Solution {
             for (int j=i; j < array2.length; j++) {
                 second = array2[j];
 
-                if (!isValid(first) && !isValid(second) && first == second) {
+                if (isValid(first) && isValid(second) && first == second) {
                     temp = array2[i];
                     array2[i] = array2[j];
                     array2[j] = temp;
@@ -71,15 +87,15 @@ public class Solution {
         return true;
     }
 
-    static boolean isValid(String string1, String string2) {
+    private static boolean isValid(String string1, String string2) {
         return (null != string1) && (null != string2) && (string1.length() == string2.length()); 
     }
 
-    static boolean isValid(char c) {
-        return (c == 0 || c == ' '); 
+    private static boolean isValid(char c) {
+        return (c != 0 || c != ' '); 
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
         int n = Integer.parseInt(in.nextLine().trim());
@@ -88,9 +104,6 @@ public class Solution {
             a[i] = in.nextLine();
         }
         
-        LocalDateTime start = LocalDateTime.now();
         Arrays.stream(friendlyWords(a)).forEach(System.out::println);
-
-        System.out.println(Duration.between(start, LocalDateTime.now()));
     }
 }

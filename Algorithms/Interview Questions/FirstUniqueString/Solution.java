@@ -1,3 +1,5 @@
+// Author: Romulo Jovelli
+// Interview Question: find the first non duplicated word in a huge unordered List.
 
 import java.util.*;
 
@@ -22,14 +24,7 @@ public class Solution {
 			}
 
 			lista.add(values[(int) (Math.random() * 10)]);
-		}		
-
-		System.out.println("End initialize");
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Started");
-		System.out.println(returnFirstNonDuplicated());
+		}
 	}
 
 	private static String returnFirstNonDuplicated() {
@@ -55,4 +50,8 @@ public class Solution {
 		}
 		return false;
 	}
+
+	public static void main(String[] args) {
+		System.out.println(returnFirstNonDuplicated());
+	}	
 }

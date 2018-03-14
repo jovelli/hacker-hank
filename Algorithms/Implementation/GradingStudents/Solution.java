@@ -1,17 +1,9 @@
+// Author: Romulo Jovelli
+// HackerHank: https://www.hackerrank.com/challenges/grading/problem
 
 import java.util.*;
 
 public class Solution {
-	public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int[] grades = new int[n];
-        for(int grades_i=0; grades_i < n; grades_i++) {
-            grades[grades_i] = in.nextInt();
-        }
-        List result = solve(grades);
-        result.forEach(System.out::println);	
-	}
 
 	private static List solve(int[] grades) {
 		List<Integer> result = new ArrayList();
@@ -27,5 +19,17 @@ public class Solution {
 		}
 
 		return result;
+	}
+
+	public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] grades = new int[n];
+
+        for(int i=0; i < n; i++) {
+            grades[i] = in.nextInt();
+        }
+
+        solve(grades).forEach(System.out::println);
 	}
 }

@@ -1,16 +1,24 @@
-import java.io.*;
+// Author: Romulo Jovelli
+// Interview Question: determine if strings are twins. 
+// Rule: Same characters must be at odd indexes or at even indexes. 
+// e.g. the char A is at odd index in string 1 and at even index in string 2, so strings are not twins.
+
+// sample input
+// 2
+// fdsa
+// qazz
+// 2
+// asdf
+// zaqz
+
+// sample output
+// [false, true]       false because fdsa and asdf are not twins, true because qazz and zaqz are twins
+
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
-	
-    /**
-     * Complete the function below.
-     * DO NOT MODIFY anything outside this method. 
-     */
-    static boolean[] twins(String[] a, String[] b) {
+
+    private static boolean[] twinStrings(String[] a, String[] b) {
         boolean[] result = new boolean[a.length];
         char[] first = null, second = null;
         char temp = 0;
@@ -48,10 +56,7 @@ public class Solution {
         return result;
     }
 
-    /**
-     * DO NOT MODIFY THIS METHOD!
-     */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
         int n = Integer.parseInt(in.nextLine().trim());
@@ -66,12 +71,7 @@ public class Solution {
             b[i] = in.nextLine();
         }
         
-        // call twins function
-        boolean[] results = twins(a, b);
-        
-        for(int i = 0; i < results.length; i++) {
-            System.out.println(results[i]? "Yes" : "No");
-        }
+        System.out.println(Arrays.toString(twinStrings(a, b)));
     }
 }
 

@@ -1,13 +1,12 @@
-import java.io.*;
-import java.util.*;
+// Author: Romulo Jovelli
+// HackerHank: https://www.hackerrank.com/challenges/between-two-sets/problem
+
 import java.util.stream.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.*;
 
 public class Solution {
 
-    static int getTotalX(int[] a, int[] b) {
+    private static int getBetweenTwoSets(int[] a, int[] b) {
         int result = 0;
         int min = IntStream.of(b).min().getAsInt();
 
@@ -35,16 +34,18 @@ public class Solution {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int m = in.nextInt();
+
         int[] a = new int[n];
-        for(int a_i = 0; a_i < n; a_i++){
-            a[a_i] = in.nextInt();
+        for(int i = 0; i < n; i++){
+            a[i] = in.nextInt();
         }
+
         int[] b = new int[m];
-        for(int b_i = 0; b_i < m; b_i++){
-            b[b_i] = in.nextInt();
+        for(int i = 0; i < m; i++){
+            b[i] = in.nextInt();
         }
-        int total = getTotalX(a, b);
-        System.out.println(total);
-        in.close();
+
+        System.out.println(getBetweenTwoSets(a, b));
+
     }
 }
