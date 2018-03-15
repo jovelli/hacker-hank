@@ -5,19 +5,19 @@ import java.util.*;
 
 public class Solution {
 
-    private static String breakingRecords(int[] score) {
-        int min = score[0];
-        int max = score[0];
+    private static String breakingRecords(int[] scores) {
+        int min = scores[0];
+        int max = scores[0];
         int maxCount = 0, minCount = 0;
 
-        for (int i = 1; i < score.length; i++) {
-            if (score[i] > max) {
-                max = score[i];
+        for (int score: scores) {
+            if (score > max) {
+                max = score;
                 maxCount++;
             }
 
-            if (score[i] < min) {
-                min = score[i];
+            if (score < min) {
+                min = score;
                 minCount++;
             }
         }

@@ -12,7 +12,7 @@ public class Solution {
             acc += s[i];
 
             if (i >= m) {
-                acc -= s[i - m];
+                acc -= s[i - m];        // sliding window, remove value from left of the list.
             }
 
             if (acc == d) {

@@ -9,7 +9,7 @@ public class Solution {
         String result = "NO";
 
         if ( v1 > v2 && x2 > x1 ) {
-            if ((x2 - x1) % (v1 - v2) == 0) {
+            if ((x2 - x1) % (v2 - v1) == 0) {
                 result = "YES";
             }
         }
