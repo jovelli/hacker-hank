@@ -12,9 +12,7 @@ public class Solution {
         for (int bird: array) {
             group[bird]++;
 
-            if (group[bird] > group[index]) {
-                index = bird;
-            } else if (group[bird] == group[index] && bird < index) {
+            if (group[bird] > group[index] || (group[bird] == group[index] && bird < index)) {
                 index = bird;
             }
         }
