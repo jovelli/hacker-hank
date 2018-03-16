@@ -1,6 +1,6 @@
 
-HackerRank Solutions
+<h1>HackerRank Solutions</h1>
 
-<img src="http://cdn.hackerrank.com/contests/snapdeal/hackerRankLogo.png">
+<img align="middle" src="http://cdn.hackerrank.com/contests/snapdeal/hackerRankLogo.png">
 
 
