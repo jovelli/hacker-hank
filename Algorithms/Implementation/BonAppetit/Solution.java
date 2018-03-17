@@ -18,6 +18,7 @@ public class Solution {
         }
 
         int paid = scanner.nextInt();
+        scanner.close();
 
         System.out.println( (sum / 2) == paid ? "Bon Appetit" : (paid - (sum / 2)));
     }
