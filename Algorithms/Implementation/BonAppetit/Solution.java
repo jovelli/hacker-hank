@@ -1,10 +1,10 @@
-import java.io.*;
+// Author: Romulo Jovelli
+// HackerHank: https://www.hackerrank.com/challenges/bon-appetit/problem
+
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
+
     public static void main(String args[] ) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
