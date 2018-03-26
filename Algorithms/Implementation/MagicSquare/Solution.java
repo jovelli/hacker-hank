@@ -6,7 +6,7 @@ import java.util.*;
 public class Solution {
 
     // https://en.wikipedia.org/wiki/Magic_square
-    // All possible magic squares basend in a matrix 3x3 with distinct numbers between [1, 9]
+    // All possible magic squares based on a matrix 3x3 with distinct numbers between [1, 9]
     private static int[][] possible = {
         { 2, 9, 4, 7, 5, 3, 6, 1, 8 },
         { 2, 7, 6, 9, 5, 1, 4, 3, 8 },
