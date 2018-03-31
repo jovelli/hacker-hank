@@ -2,7 +2,6 @@
 // HackerHank: https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
 
 import java.util.*;
-import java.math.*;
 
 public class Solution {
 
@@ -13,6 +12,7 @@ public class Solution {
         for (int i = 0; i < 26; i++) {
             alphabet[i] = in.nextInt();
         }
+        in.close();
         
         String word = in.next();
         int max = 0, height = 0;
@@ -21,8 +21,6 @@ public class Solution {
             height = alphabet[letter - 'a'];
             max = Math.max(height, max);
         }
-
-        in.close();
         
         System.out.println(word.length() * max);
     }
