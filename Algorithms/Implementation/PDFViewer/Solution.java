@@ -5,24 +5,23 @@ import java.util.*;
 import java.math.*;
 
 public class Solution {
-    
-    private static char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Map<Character, Integer> alphabet = new HashMap();
+        int[] alphabet = new int[26];
         
-        for(int i = 0; i < 26; i++){
-            alphabet.put(letters[i], in.nextInt());
+        for (int i = 0; i < 26; i++) {
+            alphabet[i] = in.nextInt();
         }
         
         String word = in.next();
         int max = 0, height = 0;
         
         for (char letter: word.toCharArray()) {
-            height = alphabet.get(letter);
+            height = alphabet[letter - 'a'];
             max = Math.max(height, max);
         }
+
         in.close();
         
         System.out.println(word.length() * max);
